@@ -1,0 +1,9 @@
+p, h1{
+    color: darkblue;
+    font-family:Arial;
+}
+#texto1 {
+    color: chocolate;
+    font-family:Impact;
+    font-weight: bold;
+}

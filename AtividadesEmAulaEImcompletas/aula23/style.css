@@ -1,0 +1,15 @@
+* {
+    box-sizing:border-box;
+}
+img {
+    width:100px;
+    height:100px;
+}
+h1 {color:blue; font-size:12px;font-family:'Roboto';}
+body {background-color:peachpuff;text-align:center;}
+div {
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 10px;
+padding-left: 20px;
+}
