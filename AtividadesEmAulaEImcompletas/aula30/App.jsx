@@ -11,8 +11,7 @@ function App() {
     <>
     <Car brand="Ford" model="Mustang" color="red" year={1969} />
     <Moto  brand="Honda" />
-    <FavoriteColor />
-
+    <FavoriteColor/>
     </>
   )
 }
