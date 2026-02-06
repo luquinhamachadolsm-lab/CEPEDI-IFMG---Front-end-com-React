@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #3498DB;
+    color: white;
+    
+    /* Transições suaves para as propriedades especificadas */
+    transition: background-color 0.3s ease-out,
+                transform 0.3s ease-out,
+                box-shadow 0.3s ease-out;
+    
+    /* Sombra inicial sutil */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    /* Muda de cor ao passar o mouse */
+    background-color: #F39C12;
+    
+    /* Aumenta levemente o tamanho */
+    transform: scale(1.08);
+    
+    /* Ganha uma sombra mais pronunciada */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    /* Feedback ao clicar */
+    transform: scale(0.98);
+}
