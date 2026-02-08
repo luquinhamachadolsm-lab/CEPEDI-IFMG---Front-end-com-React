@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid de Cards com Tailwind CSS - React</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Componente Card
+        const Card = ({ image, title, description }) => {
+            const [isHovered, setIsHovered] = useState(false);
+
+            return (
+                <div
+                    className={`bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 transform ${
+                        isHovered ? 'shadow-xl -translate-y-1' : 'shadow-md'
+                    }`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <img
+                        src={image}
+                        alt={title}
+                        className="w-full h-48 object-cover rounded-t-lg"
+                    />
+                    <div className="p-4">
+                        <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                            {title}
+                        </h2>
+                        <p className="text-sm text-gray-600 leading-relaxed">
+                            {description}
+                        </p>
+                    </div>
+                </div>
+            );
+        };
+
+        // Componente Grid de Cards
+        const CardGrid = ({ cards }) => {
+            return (
+                <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+                    {/* Header */}
+                    <div className="max-w-7xl mx-auto mb-12">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                            Grid de Cards Responsivo
+                        </h1>
+                        <p className="text-base sm:text-lg text-gray-600">
+                            Layout adaptável para todos os tamanhos de tela
+                        </p>
+                    </div>
+
+                    {/* Grid Container */}
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                            {cards.map((card, index) => (
+                                <Card
+                                    key={index}
+                                    image={card.image}
+                                    title={card.title}
+                                    description={card.description}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        // Componente App
+        const App = () => {
+            const cardsData = [
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+1",
+                    title: "Card 1",
+                    description: "Esta é uma descrição curta do primeiro card com Tailwind CSS."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+2",
+                    title: "Card 2",
+                    description: "Este card também possui estilos totalmente responsivos."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+3",
+                    title: "Card 3",
+                    description: "O layout se adapta perfeitamente a qualquer tela."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+4",
+                    title: "Card 4",
+                    description: "Mobile-first design com Tailwind CSS utilities."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+5",
+                    title: "Card 5",
+                    description: "Sistema de design consistente em todas as telas."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+6",
+                    title: "Card 6",
+                    description: "Espaçamento e tipografia perfeitamente alinhados."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+7",
+                    title: "Card 7",
+                    description: "Grid responsivo usando Tailwind CSS."
+                },
+                {
+                    image: "https://via.placeholder.com/300x200?text=Card+8",
+                    title: "Card 8",
+                    description: "Mais um card na grade responsiva."
+                }
+            ];
+
+            return <CardGrid cards={cardsData} />;
+        };
+
+        // Renderizar a aplicação
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

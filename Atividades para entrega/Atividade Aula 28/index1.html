@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Card - React</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        #root {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        // Estilos do Card em formato de módulo
+        const cardStyles = {
+            container: {
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                padding: '16px',
+                maxWidth: '300px',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                overflow: 'hidden',
+                transition: 'transform 0.3s ease',
+                cursor: 'pointer'
+            },
+            containerHover: {
+                transform: 'translateY(-4px)',
+                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+            },
+            image: {
+                width: '100%',
+                height: '200px',
+                objectFit: 'cover',
+                borderRadius: '6px',
+                marginBottom: '12px'
+            },
+            title: {
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#333',
+                margin: '8px 0',
+                fontFamily: 'Arial, sans-serif'
+            },
+            description: {
+                fontSize: '14px',
+                color: '#666',
+                lineHeight: '1.5',
+                margin: '0',
+                fontFamily: 'Arial, sans-serif'
+            }
+        };
+
+        // Componente Card
+        const Card = ({ image, title, description }) => {
+            const [isHovered, setIsHovered] = useState(false);
+
+            return (
+                <div
+                    style={{
+                        ...cardStyles.container,
+                        ...(isHovered ? cardStyles.containerHover : {})
+                    }}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <img src={image} alt={title} style={cardStyles.image} />
+                    <h2 style={cardStyles.title}>{title}</h2>
+                    <p style={cardStyles.description}>{description}</p>
+                </div>
+            );
+        };
+
+        // Componente App
+        const App = () => {
+            return (
+                <>
+                    <Card
+                        image="https://via.placeholder.com/300x200?text=Imagem+1"
+                        title="Card 1"
+                        description="Esta é uma descrição curta do primeiro card."
+                    />
+                    <Card
+                        image="https://via.placeholder.com/300x200?text=Imagem+2"
+                        title="Card 2"
+                        description="Esta é uma descrição curta do segundo card."
+                    />
+                    <Card
+                        image="https://via.placeholder.com/300x200?text=Imagem+3"
+                        title="Card 3"
+                        description="Esta é uma descrição curta do terceiro card."
+                    />
+                </>
+            );
+        };
+
+        // Renderizar a aplicação
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
