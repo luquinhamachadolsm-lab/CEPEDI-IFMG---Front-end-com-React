@@ -1,0 +1,167 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.about-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+:root[data-theme="dark"] .about-section {
+  background-color: #333;
+  border-left-color: #66b3ff;
+}
+
+.about-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+:root[data-theme="dark"] .about-section h3 {
+  color: #fff;
+}
+
+.about-section p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+:root[data-theme="dark"] .about-section p {
+  color: #ccc;
+}
+
+.features-list,
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-list li,
+.tech-list li {
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+:root[data-theme="dark"] .features-list li,
+:root[data-theme="dark"] .tech-list li {
+  color: #ccc;
+}
+
+.developer-card {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="dark"] .developer-card {
+  background-color: #444;
+}
+
+.developer-emoji {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.developer-card h4 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.developer-role {
+  color: #007bff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+:root[data-theme="dark"] .developer-role {
+  color: #66b3ff;
+}
+
+.developer-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.developer-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.developer-links a:hover {
+  background-color: #0056b3;
+}
+
+:root[data-theme="dark"] .developer-links a:hover {
+  background-color: #005bb3;
+}
+
+.about-footer {
+  text-align: center;
+  border-left: none;
+  background-color: transparent;
+  padding: 2rem 0;
+}
+
+.version {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.copyright {
+  color: #bbb;
+  font-size: 0.85rem;
+}
+
+:root[data-theme="dark"] .version,
+:root[data-theme="dark"] .copyright {
+  color: #888;
+}
+
+.about-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  color: #007bff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+:root[data-theme="dark"] .back-link:hover {
+  background-color: #333;
+  color: #66b3ff;
+}
