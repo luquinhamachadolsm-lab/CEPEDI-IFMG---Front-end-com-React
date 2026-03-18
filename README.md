@@ -10,7 +10,7 @@ Este repositório está dividido em:
 ### ✅[Atividades para entrega](https://github.com/luquinhamachadolsm-lab/CEPEDI-IFMG---Front-end-com-React/tree/main/Atividades%20para%20entrega)
  Atividades concluídas e prontas para a entrega.
 
-### 📝[Gerenciador de tarefas]
+### 📝[Gerenciador de tarefas](https://github.com/luquinhamachadolsm-lab/CEPEDI-IFMG---Front-end-com-React/tree/main/GerenciadorDeTarefas)
  Atividade final do curso, um gerenciador de tarefas feito em React.
 
 
